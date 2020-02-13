@@ -23,8 +23,8 @@ If you need any help getting your node running, join the [Telegram channel](http
 Download the Bitcoin core binary with wget, and start a full node in testnet mode:
 
 ```bash
-wget https://bitcoin.org/bin/bitcoin-core-0.19.0.1/bitcoin-0.19.0.1-x86_64-linux-gnu.tar.gz
-tar -xzf bitcoin-0.19.0.1-x86_64-linux-gnu.tar.gz
+wget https://bitcoin.org/bin/bitcoin-core-0.19.0.1/bitcoin-0.19.0.1-x86_64-linux-gnu.tar.gz &&
+tar -xzf bitcoin-0.19.0.1-x86_64-linux-gnu.tar.gz &&
 ./bitcoin-0.19.0.1/bin/bitcoind -testnet -rpcuser=foo -rpcpassword=bar
 ```
 
