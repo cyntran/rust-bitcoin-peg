@@ -115,7 +115,7 @@ cp ~/.nomic-testnet/config/priv_validator_key.json ~/nomic-key-backup.json
 Since Nomic is in the early stages, we may end up resetting the network after making a backwards-incompatible change, or introduce a bug which results in corrupt data. If we specify that you need to hard reset your node, simply make sure you've backed up the key as in the above section, then remove all the data:
 
 ```bash
-rm -rf merk.db # located in the directory where you ran the ABCI server && \
+rm -rf merk.db && \ # located in the directory where you ran the ABCI server 
 rm -rf ~/.nomic-testnet
 ```
 
