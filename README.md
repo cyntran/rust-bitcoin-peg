@@ -40,8 +40,8 @@ If you'd like to reduce the amount of storage required, you can instead run the 
 Download and run the Nomic ABCI server binary.
 
 ```bash
-wget https://github.com/nomic-io/rust-bitcoin-peg/releases/download/v0.1.0/nomic-x86_64-linux
-chmod +x ./nomic-x86_64-linux
+wget https://github.com/nomic-io/rust-bitcoin-peg/releases/download/v0.1.0/nomic-x86_64-linux && \
+chmod +x ./nomic-x86_64-linux && \
 BTC_RPC_USER=foo BTC_RPC_PASS=bar ./nomic-x86_64-linux
 ```
 
@@ -54,15 +54,15 @@ This server is where the Nomic full node's application logic happens, e.g. valid
 Download and unzip Tendermint v0.32.8.
 
 ```bash
-wget https://github.com/tendermint/tendermint/releases/download/v0.32.8/tendermint_v0.32.8_linux_amd64.zip
+wget https://github.com/tendermint/tendermint/releases/download/v0.32.8/tendermint_v0.32.8_linux_amd64.zip && \
 unzip tendermint_v0.32.8_linux_amd64.zip
 ```
 
 Now configure your Tendermint home directory and start your full node:
 
 ```bash
-./tendermint init --home ~/.nomic-testnet
-curl https://raw.githubusercontent.com/nomic-io/rust-bitcoin-peg/master/config/genesis.json > ~/.nomic-testnet/config/genesis.json
+./tendermint init --home ~/.nomic-testnet && \
+curl https://raw.githubusercontent.com/nomic-io/rust-bitcoin-peg/master/config/genesis.json > ~/.nomic-testnet/config/genesis.json && \
 ./tendermint node --home ~/.nomic-testnet --p2p.persistent_peers "117930eb8451ae368ba07c18e14cd497ef59f33e@kep.io:26656"
 ```
 
@@ -77,8 +77,8 @@ The relayer scans Bitcoin for new block headers and broadcasts them to the sidec
 Download and run the latest version of the relayer:
 
 ```bash
-wget https://github.com/nomic-io/rust-bitcoin-peg/releases/download/v0.1.0/relayer-x86_64-linux
-chmod +x relayer-x86_64-linux
+wget https://github.com/nomic-io/rust-bitcoin-peg/releases/download/v0.1.0/relayer-x86_64-linux && \
+chmod +x relayer-x86_64-linux && \
 BTC_RPC_USER=foo BTC_RPC_PASS=bar ./relayer-x86_64-linux
 ```
 
@@ -93,8 +93,8 @@ To gain voting power on the Nomic sidechain, full nodes must create [hashcash](h
 Download and run the single-CPU work generation script:
 
 ```bash
-wget https://github.com/nomic-io/rust-bitcoin-peg/releases/download/v0.1.0/worker-x86_64-linux
-chmod +x worker-x86_64-linux
+wget https://github.com/nomic-io/rust-bitcoin-peg/releases/download/v0.1.0/worker-x86_64-linux && \
+chmod +x worker-x86_64-linux && \
 ./worker-x86_64-linux
 ```
 
@@ -115,7 +115,7 @@ cp ~/.nomic-testnet/config/priv_validator_key.json ~/nomic-key-backup.json
 Since Nomic is in the early stages, we may end up resetting the network after making a backwards-incompatible change, or introduce a bug which results in corrupt data. If we specify that you need to hard reset your node, simply make sure you've backed up the key as in the above section, then remove all the data:
 
 ```bash
-rm -rf merk.db # located in the directory where you ran the ABCI server
+rm -rf merk.db # located in the directory where you ran the ABCI server && \
 rm -rf ~/.nomic-testnet
 ```
 
