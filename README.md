@@ -51,6 +51,12 @@ This server is where the Nomic full node's application logic happens, e.g. valid
 
 ### 3. Run a Tendermint full node
 
+Install unzip if you don't already have it.
+
+```bash
+apt install unzip
+```
+
 Download and unzip Tendermint v0.32.8.
 
 ```bash
